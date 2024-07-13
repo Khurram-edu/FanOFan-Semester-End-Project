@@ -1,0 +1,341 @@
+@font-face {
+    font-family: sunset;
+    src: url(/assets/Fonts/sunset-gothic-font-1719273028-0/Sunset-Gothic-Pro.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+#main{
+    position: relative;
+    z-index: 10;
+}
+#page1{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+nav{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw 2vw;
+    position: relative;
+}
+#logo{
+    height: 50%;
+    width: 160px;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+#logo img{
+    width: 80%;
+}
+#links{
+    height: 80%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3.5vw;
+    border-radius: 50px;
+    position: absolute;
+    left: 28%;
+    background-color: #f6f6f6;
+}
+#links h4{
+    padding: 10px 8px ;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+}
+#links h4::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: #1111111d;
+    position: absolute;
+    left: 0%;
+    bottom: -100%;
+    z-index: 9;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+}
+#links h4:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+#links a{
+    text-decoration: none;
+    font-size: 1.6vw;
+    color: #111;
+    font-family: sunset;
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
+}
+#cart{
+    height: 65px;
+    width: 65px;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#cart img{
+    height: 50%;
+    width: 50%;
+}
+#p1-inner{
+    display: flex;
+    /* background-color: red;    */
+    gap: 1vw;
+    min-height: calc(100vh - 80px);
+    overflow-x: hidden;
+    padding-left: 0 1vw;
+}
+#p1-i-left{
+    min-height: calc(100vh - 80px);
+    width: 45%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: red; */
+    justify-content: space-between;
+    gap: 1vw;
+    /* margin-left: 0.5vw; */
+}
+#pro-img{
+    position: relative;
+    margin-top: 1vw;
+    height: 95%;
+    width: 95%;
+    /* background-color: #f6f6f6; */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+#pro-img img{
+    width: 45vw;
+}
+#hot{
+    height: 65px;
+    background-color: red;
+    width: 120px;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 5%;
+    transform: scale(1.3) rotate(-15deg);
+    display: none;
+    bottom: 10%;
+
+}
+#hot h1{
+    font-size: 2vw;
+    font-family: sunset;
+    font-weight: 900;
+    color: #fff;
+}
+#p1-i-right{
+    height: calc(100vh - 80px);
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pro-dets{
+    height: 95%;
+    width: 95%;
+    /* background-color: #f6f6f6; */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+#pro-top{
+    height: 25vh;
+    width: 100%;
+    padding: 1vw 2vw;
+}
+#pro-top h1{
+    font-family: sunset;
+    font-size: 4.5vw;
+    font-weight: 400;
+}
+#pro-top h2{
+    font-family: sunset;
+    font-size: 3vw;
+    font-weight: 400;
+}
+#pro-top h5{
+    font-family: sunset;
+    font-size: 1.5vw;
+    font-weight: 400;
+    transform: translateX(2px);
+}
+hr{
+    width: 90%;
+    border: 1px solid #111;
+    transform: translateX(2vw);
+}
+#pro-center{
+    height: 20vh;
+    width: 100%;
+    padding:1vw 1.5vw;
+}
+#pro-center li{
+    margin-left: 0.5vw;
+    list-style: none;
+    font-family: sunset;
+    font-size: 1.15vw;
+}
+#pro-btn{
+    height: 15vw;
+    /* background-color: red; */
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transform: translateX(2vw);
+}
+#pro-btn button{
+    height: 90%;
+    width: 22vw;
+    font-family: sunset;
+    font-weight: 400;
+    font-size: 1.3vw;
+    border: none;
+    outline: none;
+    background-color: #61CEF2;
+    border-radius: 100px;
+    position: relative;
+}
+#pickup{
+    font-family: sunset;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    transform: translateX(2vw);
+}
+#pickup i{
+    padding: 0.4vw 0.4vw;
+    font-size: 2vw;
+    background-color: #18ff18;
+    border-radius: 50%;
+    color: #fff;
+}
+#page2{
+    height: 100vh;
+    width: 100%;
+}
+#p2-heading{
+    height: 30vh;
+    width: 70vw;
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    font-family: sunset;
+    padding: 0 4vw;
+}
+#p2-heading h1{
+    font-size: 6.5vw;
+}
+#p2-inner{
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+#product{
+    height: 65vh;
+    width: 100%;
+    /* background-color: red; */
+    font-family: sunset;
+    position: relative;
+    border-bottom: 1.5px solid #111;
+}
+.d-flex{
+    display: flex;
+    align-items: center;
+}
+/* .pro-1{
+    
+}
+.pro-2{
+    
+}
+.pro-3{
+    
+} */
+#pro-info{
+    height: 20vh;
+    width: 60vw;
+    /* background-color: yellow; */
+    transform:translateX(-5vw);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+#pro-info h4{
+    font-size: 2.5vw;
+}
+#pro-info h6{
+    font-size: 1.5vw;
+}
+.pro-1 img{
+    transform: translate(-6vw);
+    filter: drop-shadow(0 50px 25px #0000003a);
+}
+.pro-2 img{
+    transform: translate(-6vw);
+    filter: drop-shadow(0 50px 25px #0000003a);
+}
+.pro-3 img{
+    transform: translate(-6vw);
+    filter: drop-shadow(0 50px 25px #0000003a);
+}
+#p-i-bottom{
+    position: absolute;
+    right: 34%;
+    bottom: 22%;
+}
+#p-i-bottom button{
+    height: 3vw;
+    width: 10vw;
+    border: none;
+    outline: none;
+    background-color: #61CEF2;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65vw;
+
+}
+#p-i-bottom button a{
+    text-decoration: none;
+    color: #111;
+    font-weight: 400;
+    font-family: sunset;
+}
+#p-i-bottom button i{
+    font-size: 1.5vw;
+}

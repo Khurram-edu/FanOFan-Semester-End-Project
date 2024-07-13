@@ -14,6 +14,7 @@ html, body{
 #main{
     position: relative;
     z-index: 10;
+    overflow: hidden;
 }
 #page1{
     min-height: 100vh;
@@ -29,6 +30,7 @@ nav{
     justify-content: space-between;
     padding: 1vw 2vw;
     position: relative;
+    z-index: 110;
 }
 #logo{
     height: 50%;
@@ -39,6 +41,7 @@ nav{
 }
 #logo img{
     width: 80%;
+    transition: all ease-in-out 0.5s;
 }
 #links{
     height: 80%;
@@ -96,90 +99,56 @@ nav{
     height: 50%;
     width: 50%;
 }
+#menu{
+    display: none;
+}
 #page1{
     height: 100vh;
     width: 100%;
     background-color: #fff;
 }
 #p1-content{
-    height: 100vh;
+    height: calc(100vh -80px);
     width: 100%;
-    display: flex;
-}
-#p1-left{
-    height: 100%;
-    width: 55%;
-}
-#heading{
-    height: 150px;
-    width: 500px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    transform: translateY(100px) translateX(90px);
+    justify-content: center;
 }
-#heading img{
-    height: 70%;
-}
-#p1-left h1{
-    font-size: 6vw;    
-    font-family: sunset;
-    color: #111;
-    font-weight: normal;
-}
-#p1-left p{
-    font-size: calc(2.5vw / 1.618);
-    font-family: sunset;
-    color: #111;
-    font-weight: 100;
-    transform: translateY(100px) translateX(90px);
-}
-#p1-right{
-    height: 100%;
-    width: 45%;
+#p1-main{
+    width: 75vw;
+    height: 85vh;
     position: relative;
-    right: 5%;
 }
-#box-1{
-    height: 200px;
-    width: 170px;
-    border-radius: 3px;
-    position: absolute;
-    bottom: 20%;
-    left: 7%;
-    z-index: 11;
-    background-image: url(/assets/images/lp.2.jpeg);
-    overflow: hidden;
-    background-size: cover;
-}
-#box-2{
-    height: 550px;
-    width: 350px;
-    position: absolute;
-    border-radius: 3px;
-    background-image: url(/assets/images/lp.1.png);
-    top: 20px;
-    background-size: cover;
-    right: 15%;
-    z-index: 10;
-}
-#box-3{
-    height: 230px;
-    width: 180px;
-    position: absolute;
-    right: 20px;
-    bottom: 38%;
-    border-radius: 3px;
-    background-image: url(/assets/images/lp.3);
-    background-size: cover;
-    background-position: left;
-    z-index: 9;
-    overflow: hidden;
-}
-#overlay{
+.image-con{
     height: 100%;
-    width: 100%;
-    background-color: #00000039;
+    width: 0%;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.image-con img{
+    height: 130%;
+    object-fit: cover;
+}
+.text{
+    position: absolute;
+    z-index: 10;
+    height: 110px;
+    width: 450px;
+    overflow: hidden;
+    left: -10%;
+    bottom: 10%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.text h1{
+    font-family: sunset;
+    font-size: 5.2vw;
+    position: absolute;
+    top: 110px;
+    color: #111;
 }
 #page2{
     height: 100vh;
@@ -479,75 +448,313 @@ nav{
     transform: rotate(0deg);
 }
 #page4{
-    height: 100vh;
+    min-height: 125vh;
     width: 100%;
     background-color: #004D3B;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
-}
-#p4-inner{
-    height: 90%;
-    width: 90%;
-}
-#form-container{
-    height: 90%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    padding-left: 2vw;
-}
-.feedback-form{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1vw;
-}
-#fb-title{
-    height: 80px;
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#fb-title h1{
+    justify-content: center; */
+    overflow-x: hidden;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+} 
+#page4 h1{
     font-family: sunset;
-    white-space: nowrap;
-    font-weight: bold;
-    font-size: 3vw;
+    font-size: 5vw;
+    margin-bottom: 2vw;
+    color: #fff;
+    transform: translateX(70px);
+}
+.faq-container{
+    padding: 2vw 5vw;
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+    transition: all ease 0.5s;
+}
+.question{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: sunset;
+    font-weight: 400;
+}
+.question h4{
+    font-size: 2vw;
     color: #fff;
 }
-.feedback-inputs{
-    width: 600px;
-    height: 60px;
-    border: none;
-    outline: none;
-    padding-left: 25px;
-    border-radius: 10px;
-    background-color: none;
+.question i{
+    font-size: 2.8vw;
+    color: #fff;
 }
-.feedback-form textarea{
-    height: 180px;
+.icon{
+    transition: all ease 0.5s;
+}
+.answer{
     font-family: sunset;
+    font-size: 2vw;
+    margin-top: 2vw;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
 }
-.feedback-inputs:focus{
-    border: 1px solid #36D995;
+.answer p{
+    font-size:1.5vw ;
+    color: #fff;
 }
-::placeholder{
-    color: #a1a1a1;
+.faq-container:hover .answer{
+    max-height: fit-content;
+}
+.faq-container:hover .icon{
+    transform: rotate(45deg);
+}
+#moving-text{
+    white-space: nowrap;
+    overflow-x: auto;
+}
+#moving-text::-webkit-scrollbar{
+    display: none;
+}
+#moving-text h1{
+    display: inline-block;
+    font-size: 7vw;
     font-family: sunset;
+    font-weight: 300;
+    margin: 2vw;
 }
-.feedback-form button{
+.con{
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: move;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+.circle{
+    height: 50px;
+    width: 50px;
+    background-color: #74e2e5;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 1vw 2vw;
+}
+@keyframes move {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#page5{
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+footer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+#footer-left{
+    height: 100%;
+    width: 50%;
+}
+#footer-left h1{
+    font-family: sunset;
+    font-size: 6.5vw;
+    font-weight: 100;
+    transform: translateX(50px) translateY(20px);
+}
+#footer-left h4{
+    font-family: sunset;
+    font-size: 2vw;
+    font-weight: 100;
+    text-transform: uppercase;
+    transform: translateX(50px) translateY(50px);
+}
+#footer-left p{
+    font-family: sunset;
+    font-size: calc(2vw / 1.618);
+    transform: translateX(50px) translateY(50px);
+}
+#form-container{
+    height: 10%;
+    width: 80%;
     display: flex;
     align-items: center;
-    padding: 20px 30px;
-    border: none;
-    border-radius: 50px;
-    gap: 10px;
-    font-family: sunset;
-    font-size: 1.1vw;
-    background-image: linear-gradient(#36d995,#005e37);
+    transform: translateX(35px) translateY(80px);
 }
-.feedback-form button i{
-    font-size: 20px;
+#form-container input{
+    height: 50px;
+    width: 400px;
+    padding: 10px 30px;
+    /* border: none; */
+    border-radius: 50px;
+    border: 2px solid #fff;
+    background-color: #dddddd;
+}
+#form-container input::placeholder{
+    font-family: sunset;
+    font-weight: 100;
+}
+#form-container button{
+    padding: 14px 27px;
+    border: none;
+    background-color: #61CEF2;
+    font-family: sunset;
+    font-weight: 300;
+    text-transform: capitalize;
+    border-radius: 50px;
+    transform: translateX(-105px);
+}
+#socials{
+    height: 50px;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(45px) translateY(80px);
+}
+#socials i{
+    font-size: 2vw;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+#socials i:hover{
+    color: #4b4b4b;
+}
+#f-contact{
+    height: 50px;
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1vw;
+    transform: translateX(30px) translateY(150px);
+}
+#f-contact h5{
+    font-size: 1.5vw;
+    font-family: sunset;
+    font-weight: 100;
+}
+#f-contact i{
+    font-size: 2vw;
+    font-weight: 100;
+}
+#footer-right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+#navigation-links{
+    height: 90%;
+    width: 70%;
+    transform: translateX(70px);
+}
+#f-box{
+    display: flex;
+    align-items: center;
+    height: 140px;
+    width: 100%;
+    gap: 2vw;
+    font-family: sunset;
+    font-weight: 300;
+    border-bottom: 1px solid #111;
+    cursor: pointer;
+}
+#f-box:nth-child(4){
+    border: none;
+}
+#f-box h4{
+    font-weight: 100;
+    font-size: 1.5vw;
+}
+#f-box h1{
+    font-size: 4vw;
+    font-weight: 300;
+}
+#full-scr{
+    height: 100vh;
+    width: 100%;
+    background-color: #11111120;
+    position: absolute;
+    z-index: 101;
+    top: 0;
+    right: -100%;
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#full-nav{
+    height: 100%;
+    width: 80%;
+    background-color: #FA8993;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 15vw ;
+    gap: 3vw;
+    justify-content: center;
+    flex-direction: column  ;
+    position: relative;
+    
+}
+
+#full-nav h4{
+    font-family: sunset;
+    font-size: 13vw;
+}
+#full-nav h4 a{
+    text-decoration: none;
+    color: #111;
+}
+@media (max-width:600px){
+    #page1{
+        /* background-color: red; */
+    }
+    nav #links, #cart{
+        display: none;
+    }
+    #p1-content{
+        height: 80vh;
+        width: 100%;  
+    }
+    #p1-main{
+        transform: translateY(10vw);
+        
+    }
+    nav{
+        background-color: transparent;
+    }   
+    nav #logo{
+        height: 4vh;
+        width: 40vw;
+    }
+    #menu{
+        display: block;
+        font-family: sunset;
+        padding: 2vw 5vw;
+        border: 1px solid #11111157;
+        border-radius: 50px;
+        font-weight: 400;
+    }
+    .image-con{
+        height: 70%;
+        width: 100%;
+    }
+    .image-con img{
+        display: none;
+    }
+    .image-con #one{
+        background-image: url();
+    }
+    .text{
+        background-color: red;
+    }
+    .text h1{
+        font-size: 12vw;
+    }
 }

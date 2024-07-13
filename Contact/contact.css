@@ -1,0 +1,341 @@
+@font-face {
+    font-family: sunset;
+    src: url(/assets/Fonts/sunset-gothic-font-1719273028-0/Sunset-Gothic-Pro.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+#main{
+    position: relative;
+    z-index: 10;
+}
+#page1{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+nav{
+    height: 80px;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw 2vw;
+    position: relative;
+}
+#logo{
+    height: 50%;
+    width: 160px;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+#logo img{
+    width: 80%;
+}
+#links{
+    height: 80%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3.5vw;
+    border-radius: 50px;
+    position: absolute;
+    left: 28%;
+}
+#links h4{
+    padding: 10px 8px ;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+}
+#links h4::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: #1111111d;
+    position: absolute;
+    left: 0%;
+    bottom: -100%;
+    z-index: 9;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+}
+#links h4:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+#links a{
+    text-decoration: none;
+    font-size: 1.6vw;
+    color: #111;
+    font-family: sunset;
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
+}
+#cart{
+    height: 65px;
+    width: 65px;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#cart img{
+    height: 50%;
+    width: 50%;
+}
+#p1-inner{
+    height: calc(100vh - 80px);
+    width: 100%;
+    display: flex;
+}
+#p1-left{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2vw 3vw;
+}
+#p1-left h1{
+    font-family: sunset;
+    font-size: 8.3vw;
+    font-weight: 100;
+}
+#p1-left h3{
+    font-family: sunset;
+    margin-top: 1.5vw;
+    font-size: 3vw;
+    font-weight: 100;
+}
+#p1-left h6{
+    font-family: sunset;
+    font-size: 1.5vw;
+    font-weight: 100;
+    margin-top: 3vw;
+}
+#p1-right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    position: relative;
+}
+#box{
+    height: 90px;
+    width: 100%;
+    border-bottom: 1px solid #111;
+}
+#box-container{
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+#box img:nth-child(3){
+    height: 27px;
+    transition: transform ease 0.4s;
+}
+#box img{
+    height: 40px;
+}
+#box-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 0 1.5vw;
+}
+#box a{
+    text-decoration: none;
+    text-align: left;
+    font-family: sunset;
+    color: #111;
+    font-size: 2vw;
+}
+#box:hover img:nth-child(3){
+    transform: rotate(-45deg);
+}
+#box h1{
+    font-weight: 100;
+}
+#page2{
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#headings{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 17vh;
+    width: 60vw;
+    margin-top: 4vw;
+}
+#headings h1{
+    font-family: sunset;
+    font-size: 4vw;
+    font-weight: 100;
+}
+#headings p{
+    font-family: sunset;
+    font-size: calc(3vw / 1.618);
+    font-weight: 100;
+}
+#form-container{
+    height: 70%;
+    width: 70%;
+} 
+form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+input{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    outline: none;
+    color: #111;
+    font-size: 1.5vw;
+    padding: 0 3vw;
+    font-weight: 100;
+}
+textarea{
+    border: none;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    outline: none;
+    padding: 2vw 3vw;
+    font-size: 1.2vw;
+    font-family: sunset;
+    font-weight: 100;
+}
+input::placeholder{
+    font-family: sunset;
+    color: #111;
+    font-size: 1.5vw;
+}
+textarea::placeholder{
+    font-family: sunset;
+    color: #111;
+    font-size: 1.2vw;
+}
+#input1{
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid #111;
+}
+#input2{
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid #111;
+}
+#input3{
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid #111;
+}
+button{
+    padding: 2vw 3.5vw;
+    border: none;
+    border-radius: 50px;
+    position: relative;
+    font-size: 1.6vw;
+    font-family: sunset;
+    font-weight: 200;
+    overflow: hidden;
+    margin-top: 3.5vw;
+}
+#btn-inner{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(123, 123, 123, 0.301);
+    left: -100%;
+    top: 0;
+    transition: all ease 0.3s;
+    border-radius: 50%;
+}
+button:hover #btn-inner{
+    left: 0;
+    border-radius: 10px;
+}
+#page3{
+    min-height: 80vh;
+    width: 100%;
+    background-color: #fff;
+}
+#page3 h2{
+    font-size: 8vw;
+    font-family: sunset;
+    font-weight: 400;
+    color: #111;
+    margin-left: 2vw;
+    margin-bottom: 5vw;
+}
+#moving-div{
+    white-space: nowrap;
+    overflow-x: auto;
+}
+#moving-div::-webkit-scrollbar{
+    display: none;
+}
+.con{
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: move;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+#moving-div h1{
+    display: inline-block;
+    font-size: 7vw;
+    font-family: sunset;
+    font-weight: 300;
+    margin: 2vw;
+}
+.circle{
+    height: 50px;
+    width: 50px;
+    background-color: #74E2E5;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 1vw 2vw;
+}
+@keyframes move {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
